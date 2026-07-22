@@ -1,22 +1,12 @@
-# Django settings for Nextify project.
-# This is a test comment for Git
-
 import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "Static"),
-]
-
-DEBUG = True  # Enable debug mode for development
-# Other existing settings...
-
-
+# ==============================================================================
+# ADD THIS TEMPLATES BLOCK (This resolves the TemplateDoesNotExist error)
+# ==============================================================================
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -36,21 +26,13 @@ TEMPLATES = [
     },
 ]
 
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # Ensure this path is correct
-    }
-}
-
-# 1. Ensure WhiteNoise is right under SecurityMiddleware
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # <-- Make sure this is here!
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    ...
+# Fix: Changed "Static" to lowercase "static" to match Linux case-sensitivity
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
 ]
 
-# 2. Add this at the bottom of settings.py for caching static assets
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Required for Whitenoise to collect and serve your styles on Render
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
