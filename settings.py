@@ -22,6 +22,9 @@ TEMPLATES = [
     },
 ]
 
+
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Your static files directory
+STATIC_ROOT = BASE_DIR / 'staticfiles'    # Collected static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
