@@ -16,11 +16,6 @@ STATICFILES_DIRS = [
 DEBUG = True  # Enable debug mode for development
 # Other existing settings...
 
-import os
-from pathlib import Path
-
-# Make sure BASE_DIR is defined at the top of your settings.py
-# BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATES = [
     {
