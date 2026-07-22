@@ -16,6 +16,16 @@ STATICFILES_DIRS = [
 DEBUG = True  # Enable debug mode for development
 # Other existing settings...
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Change 'templates' here to match whatever your folder is named exactly
+        'DIRS': [BASE_DIR / 'templates'], 
+        'APP_DIRS': True,
+        ...
+    },
+]
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
