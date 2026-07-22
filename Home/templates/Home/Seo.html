@@ -1,0 +1,109 @@
+{% extends "index.html" %}
+
+{% block title %}Services / SEO{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5 py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h1 class="display-4 fw-bold mb-4">Optimize Your Online Presence with Our SEO Services</h1>
+        <p class="lead fs-4">We help businesses like yours rank higher, attract more traffic, and convert visitors into customers.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg mt-3">Get Started Today</a>
+    </div>
+
+    <!-- Services Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Our SEO Services</h2>
+            <p class="fs-5 mb-4 text-center">From keyword research to technical optimization, we offer end-to-end SEO solutions tailored to your business goals.</p>
+
+            <div class="row g-4">
+                <!-- Service Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🔍 Keyword Research & Content Strategy</h5>
+                            <p class="card-text">Identify high-value keywords and create a content strategy to target your audience effectively.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 On-Page & Off-Page SEO</h5>
+                            <p class="card-text">Optimize your website's content and build authoritative backlinks to boost rankings.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">⚙️ Technical SEO & Performance Audits</h5>
+                            <p class="card-text">Improve site speed, mobile-friendliness, and overall technical health for better search visibility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Local & International SEO</h5>
+                            <p class="card-text">Target local customers or expand globally with tailored SEO strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Why Choose Us?</h2>
+            <p class="fs-5 mb-4 text-center">Our SEO services are designed to deliver measurable results and drive sustainable growth for your business.</p>
+
+            <div class="row g-4">
+                <!-- Benefit Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📈 Higher Rankings</h5>
+                            <p class="card-text">Achieve top positions on search engines for your target keywords.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 Increased Traffic</h5>
+                            <p class="card-text">Drive more qualified visitors to your website with targeted SEO strategies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">💡 Enhanced User Experience</h5>
+                            <p class="card-text">Improve site performance and usability for better engagement and conversions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌐 Expanded Reach</h5>
+                            <p class="card-text">Connect with local or global audiences through tailored SEO campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="text-center py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h2 class="fw-bold mb-4">Ready to Dominate Search Rankings?</h2>
+        <p class="fs-5 mb-4">Contact us today to learn how our SEO services can transform your online presence.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg">Get Started Now</a>
+    </div>
+</div>
+{% endblock body %}

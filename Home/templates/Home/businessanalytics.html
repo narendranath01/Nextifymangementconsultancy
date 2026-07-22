@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+
+{% block title %}Services / Business Analytics{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5 py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h1 class="display-4 fw-bold mb-4">Transform Your Data into Actionable Insights</h1>
+        <p class="lead fs-4">Unlock the hidden potential of your data with our comprehensive business analytics services.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg mt-3">Get Started Today</a>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="mb-5">
+        <img src="https://source.unsplash.com/1200x600/?business,analytics,data" alt="Business Analytics" class="img-fluid rounded-3 shadow-lg" style="height: 50vh; width: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Services Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Our Business Analytics Services</h2>
+            <p class="fs-5 mb-4 text-center">We help businesses like yours identify trends, optimize processes, and drive growth through data-driven insights.</p>
+
+            <div class="row g-4">
+                <!-- Service Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Performance Analysis & Reporting</h5>
+                            <p class="card-text">Track and analyze key performance metrics to understand your business's strengths and weaknesses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📈 Data Visualization & Dashboards</h5>
+                            <p class="card-text">Create interactive dashboards and visualizations to make complex data easy to understand.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">⚙️ Process Optimization & Efficiency Improvements</h5>
+                            <p class="card-text">Identify inefficiencies and streamline operations for better productivity and cost savings.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">👥 Customer Behavior Analysis</h5>
+                            <p class="card-text">Understand your customers' needs and preferences to improve engagement and retention.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Why Choose Us?</h2>
+            <p class="fs-5 mb-4 text-center">Our business analytics services are designed to deliver measurable results and drive sustainable growth for your business.</p>
+
+            <div class="row g-4">
+                <!-- Benefit Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">💡 Deeper Insights</h5>
+                            <p class="card-text">Gain a clear understanding of your business performance with actionable insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📉 Cost Reduction</h5>
+                            <p class="card-text">Identify cost-saving opportunities and optimize your financial operations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 Data-Driven Decisions</h5>
+                            <p class="card-text">Make informed, strategic decisions to drive your business forward.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Improved Efficiency</h5>
+                            <p class="card-text">Enhance operational efficiency and productivity with data-backed strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="text-center py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h2 class="fw-bold mb-4">Ready to Unlock the Power of Your Data?</h2>
+        <p class="fs-5 mb-4">Contact us today to learn how our business analytics services can transform your business.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg">Get Started Now</a>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,274 @@
+{% extends "index.html" %}
+
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+<div class="container-fluid p-0">
+    <!-- Hero Section with Carousel -->
+    <div id="carouselExampleAutoplaying" class="carousel slide mt-4" data-bs-ride="carousel" style="height: 60vh; min-height: 400px;">
+        <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+                <img src="{% static 'm2.jfif' %}" class="d-block w-100 h-100" alt="Business Strategy" style="object-fit: cover;">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4 rounded">
+                    <h1>Strategic Business Solutions</h1>
+                    <p>We help businesses grow through innovative strategies.</p>
+                    <a href="/ContactUs" class="btn btn-primary btn-lg">Get Started</a>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="{% static 'pr1.jfif' %}" class="d-block w-100 h-100" alt="Data Analytics" style="object-fit: cover;">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4 rounded">
+                    <h1>Data-Driven Decisions</h1>
+                    <p>Unlock insights with our advanced analytics services.</p>
+                    <a href="/businessanalytics" class="btn btn-primary btn-lg">Learn More</a>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="{% static 'm1.jfif' %}"  class="d-block w-100 h-100" alt="Market Research" style="object-fit: cover;">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4 rounded">
+                    <h1>Market Intelligence</h1>
+                    <p>Stay ahead with our comprehensive market research.</p>
+                    <a href="/marketanalytics" class="btn btn-primary btn-lg">Explore</a>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="{% static 'ds5.jfif' %}" class="d-block w-100 h-100" alt="Finance Analytics" style="object-fit: cover;">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4 rounded">
+                    <h1>Finance Analytics</h1>
+                    <p>Navigate the complexities of financial data with confidence.</p>
+                    <a href="/financeanalytics" class="btn btn-primary btn-lg">Discover</a>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="{% static 'pr3.jfif' %}" class="d-block w-100 h-100" alt="Management Consulting" style="object-fit: cover;">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4 rounded">
+                    <h1>Management Consulting</h1>
+                    <p>Transform your business with our expert consulting services.</p>
+                    <a href="/managementconsulting" class="btn btn-primary btn-lg">Learn More</a>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="{% static 'seo1.jfif' %}" class="d-block w-100 h-100" alt="SEO Solutions" style="object-fit: cover;">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4 rounded">
+                    <h1>SEO Solutions</h1>
+                    <p>Unlock your online potential with our comprehensive SEO strategies.</p>
+                    <a href="/Seo" class="btn btn-primary btn-lg">Explore</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Introduction Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h1 class="display-1mb-4"></h1>
+            <p class="lead mb-4">Empowering Your Business with Insightful Strategies</p>
+            <p class="mb-5">At Nextify Management Consultant, we specialize in providing cutting-edge research and consultancy services to help your business thrive in today's dynamic market. Our expertise in SEO, business analytics, finance analytics, market research, and management consulting ensures that you receive tailored solutions to meet your unique needs.</p>
+            <a href="{% url 'contactus' %}" class="btn btn-primary btn-lg">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Latest Blog Posts</h2>
+            <div class="row g-4">
+                {% for blog in blogs %}
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ blog.title }}</h3>
+                            <p class="card-text">{{ blog.content|truncatewords:30 }}</p>
+                            <a href="{% url 'blog/blog_detail' blog.id %}" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row g-4">
+            <!-- Business Analytics -->
+             <div class="col-md-4">
+                <div class="card h-100 shadow">
+                    <img src="{% static 'ds3.jfif' %}" class="card-img-top" alt="Business Analytics">
+                    <div class="card-body">
+                        <h3 class="card-title">Business Analytics</h3>
+                        <p class="card-text">Leverage the power of data to make informed decisions. Our business analytics services provide actionable insights, helping you understand market trends and optimize operations.</p>
+                        <a href="{% url 'businessanalytics' %}" class="btn btn-outline-primary">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- SEO Solutions -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow">
+                    <img src="{% static 'seo1.jfif' %}" class="card-img-top" alt="SEO Solutions">
+                    <div class="card-body">
+                        <h3 class="card-title">SEO Solutions</h3>
+                        <p class="card-text">Unlock your online potential with our comprehensive SEO strategies. We help you improve search engine rankings, drive targeted traffic, and convert visitors into loyal customers.</p>
+                        <a href="{% url 'seo' %}" class="btn btn-outline-primary">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Finance Analytics -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow">
+                    <img src="{% static 'dv1.jfif' %}" class="card-img-top" alt="Finance Analytics">
+                    <div class="card-body">
+                        <h3 class="card-title">Finance Analytics</h3>
+                        <p class="card-text">Navigate the complexities of financial data with confidence. Our finance analytics services offer in-depth analysis and consultancy, empowering you to make strategic financial decisions.</p>
+                        <a href="{% url 'finance' %}" class="btn btn-outline-primary">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Market Research -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow">
+                    <img src="{% static 'm1.jfif' %}" class="card-img-top" alt="Market Research">
+                    <div class="card-body">
+                        <h3 class="card-title">Market Research</h3>
+                        <p class="card-text">Stay ahead of the competition with our thorough market research. We provide you with critical information on market trends, consumer behavior, and competitive dynamics.</p>
+                        <a href="{% url 'marketanalytics' %}" class="btn btn-outline-primary">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Management Consulting -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow">
+                    <img src="{% static 'pr2.jfif' %}" class="card-img-top" alt="Management Consulting">
+                    <div class="card-body">
+                        <h3 class="card-title">Management Consulting</h3>
+                        <p class="card-text">Transform your business with our expert management consulting services. We help you streamline operations, improve efficiency, and foster a culture of continuous improvement.</p>
+                        <a href="{% url 'managementconsulting' %}" class="btn btn-outline-primary">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Organizational Development -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow">
+                    <img src="{% static '5.jfif' %}" class="card-img-top" alt="Organizational Development">
+                    <div class="card-body">
+                        <h3 class="card-title">Organizational Development</h3>
+                        <p class="card-text">Enhance your organizational effectiveness. We provide consultancy services to improve your structure, processes, and culture for better performance.</p>
+<a href="{% url 'orgdevelopment' %}" class="btn btn-outline-primary">Learn More</a>
+
+                    </div>
+                </div>
+            </div>
+           </div>
+    </div>
+</section>
+    
+    <!-- Why Choose Us Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Choose Us?</h2>
+        <div class="row g-4">
+            <!-- Expert Team -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                    <h4>Expert Team</h4>
+                    <p>Our team of experienced professionals brings a deep understanding of various industries and domains, ensuring you receive the best consultancy services.</p>
+                </div>
+            </div>
+            <!-- Customized Solutions -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-cogs fa-3x mb-3 text-primary"></i>
+                    <h4>Customized Solutions</h4>
+                    <p>We tailor our services to meet your specific business needs and objectives, providing personalized strategies for your success.</p>
+                </div>
+            </div>
+            <!-- Proven Results -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                    <h4>Proven Results</h4>
+                    <p>We have a track record of delivering measurable results that drive business success, helping our clients achieve their goals efficiently.</p>
+                </div>
+            </div>
+            <!-- Client-Centric -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-handshake fa-3x mb-3 text-primary"></i>
+                    <h4>Client-Centric</h4>
+                    <p>Your success is our priority. We work closely with you to ensure your goals are met and exceeded, providing continuous support and guidance.</p>
+                </div>
+            </div>
+            <!-- Innovative Approach -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-lightbulb fa-3x mb-3 text-primary"></i>
+                    <h4>Innovative Approach</h4>
+                    <p>We leverage the latest technologies and methodologies to provide innovative solutions that keep you ahead of the competition.</p>
+                </div>
+            </div>
+            <!-- Global Perspective -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-globe fa-3x mb-3 text-primary"></i>
+                    <h4>Global Perspective</h4>
+                    <p>With a global outlook, we bring diverse insights and strategies that cater to both local and international market dynamics.</p>
+                </div>
+            </div>
+            <!-- Transparent Communication -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-comments fa-3x mb-3 text-primary"></i>
+                    <h4>Transparent Communication</h4>
+                    <p>We maintain open and transparent communication, ensuring you are always informed and involved in the decision-making process.</p>
+                </div>
+            </div>
+            <!-- Cost-Effective Solutions -->
+            <div class="col-md-3">
+                <div class="text-center p-3">
+                    <i class="fas fa-coins fa-3x mb-3 text-primary"></i>
+                    <h4>Cost-Effective Solutions</h4>
+                    <p>Our services are designed to provide maximum value, ensuring cost-effective solutions that fit your budget without compromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Call to Action Section -->
+<section class="py-5 text-white position-relative" style="background-image: url('{% static '6.jfif' %}'); background-size: cover;">
+    <!-- Overlay for better text contrast -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgb(228, 227, 227);"></div>
+    <div class="container text-center position-relative z-index-1">
+        <h2 class="mb-4" style="color:rgb(44, 43, 43); text-shadow: 2px 2px 4px rgba(27, 27, 27, 0.5);">Ready to Elevate Your Business?</h2>
+        <p class="lead mb-4" style="color:rgb(49, 48, 48); text-shadow: 1px 1px 3px rgba(41, 40, 40, 0.5);">Contact us today to schedule a consultation and discover how Nextify Management Consultant can help you achieve your goals.</p>
+<a href="{% url 'contactus' %}" class="btn btn-primary btn-lg">Get in Touch</a>
+
+    </div>
+</section>
+{% endblock body %}

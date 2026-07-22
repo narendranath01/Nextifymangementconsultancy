@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}User Signup{% endblock title %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="card-title mb-0"><i class="fas fa-user-plus"></i> User Signup</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Sign Up</button>
+                      </form>
+                    <p class="mt-3 text-center">
+                        Already have an account? <a href="{% url 'login' %}" class="text-primary">Login here</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

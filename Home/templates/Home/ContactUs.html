@@ -1,0 +1,93 @@
+{% extends "index.html" %}
+
+{% block title %}Contact Us - Nextify Management Consultant{% endblock title %}
+
+{% block body %}
+<!-- Contact Us Section -->
+<section class="contact-section py-5 bg-light">
+  <div class="container">
+    <h1 class="text-center mb-5 display-4">Contact Nextify Management Consultant</h1>
+    
+    <div class="row g-5">
+      <!-- Contact Information Column -->
+      <div class="col-md-6">
+        <div class="contact-info p-4 bg-white rounded shadow-sm">
+          <h3 class="mb-4"><i class="fas fa-envelope-open-text me-2 text-primary"></i>Get in Touch with Us</h3>
+          <p class="text-muted">We're here to help! Whether you have questions about our services or need assistance with a specific project, our team is ready to assist you. Reach out to us today, and let's start a conversation.</p>
+          
+          <div class="contact-details mt-4">
+            <h4 class="mb-3"><i class="fas fa-address-card me-2 text-primary"></i>Our Contact Information</h4>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <i class="fas fa-envelope me-2 text-primary"></i>
+                <strong>Email:</strong> <a href="mailto:info@nextify.com" class="text-decoration-none">info@nextify.com</a>
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-phone me-2 text-primary"></i>
+                <strong>Phone:</strong> <a href="tel:+1234567890" class="text-decoration-none">+1 234 567 890</a>
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                <strong>Address:</strong> 123 Business Street, City, Country
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="social-media mt-4">
+            <h4 class="mb-3"><i class="fas fa-share-alt me-2 text-primary"></i>Follow Us</h4>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-decoration-none text-primary"><i class="fab fa-facebook fa-2x"></i></a>
+              <a href="#" class="text-decoration-none text-primary"><i class="fab fa-twitter fa-2x"></i></a>
+              <a href="#" class="text-decoration-none text-primary"><i class="fab fa-linkedin fa-2x"></i></a>
+              <a href="#" class="text-decoration-none text-primary"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form Column -->
+      <div class="col-md-6">
+        <div class="contact-form p-4 bg-white rounded shadow-sm">
+          <h3 class="mb-4"><i class="fas fa-paper-plane me-2 text-primary"></i>Send Us a Message</h3>
+          <form action="/contact" method="post">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Your Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="mb-3">
+              <label for="service" class="form-label">Select Service</label>
+              <select class="form-select" id="service" required>
+                <option value="">Choose a service</option>
+                <option>Business Analytics</option>
+                <option>Finance Analytics</option>
+                <option>Market Analytics</option>
+                <option>Market Research</option>
+                <option>SEO Solutions</option>
+                <option>Management Consulting</option>
+                <option>Organizational Development</option>
+                <option>Strategic Planning</option>
+                <option>Change Management</option>
+                <option>Risk Management</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}

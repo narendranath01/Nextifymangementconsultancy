@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+
+{% block title %}Services / Marketing Analytics{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5 py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h1 class="display-4 fw-bold mb-4">Gain a Competitive Edge with In-Depth Marketing Insights</h1>
+        <p class="lead fs-4">Unlock the power of data-driven marketing strategies to understand your audience, outpace competitors, and drive growth.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg mt-3">Get Started Today</a>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="mb-5">
+        <img src="https://source.unsplash.com/1200x600/?marketing,analytics,data" alt="Marketing Analytics" class="img-fluid rounded-3 shadow-lg" style="height: 50vh; width: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Services Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Our Marketing Analytics Services</h2>
+            <p class="fs-5 mb-4 text-center">We provide comprehensive marketing analytics solutions to help you understand your market, optimize campaigns, and achieve measurable results.</p>
+
+            <div class="row g-4">
+                <!-- Service Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Market Sizing & Segmentation</h5>
+                            <p class="card-text">Identify and target the most profitable market segments with precision.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📈 Competitive Analysis</h5>
+                            <p class="card-text">Gain insights into your competitors' strategies and market positioning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">👥 Consumer Behavior Insights</h5>
+                            <p class="card-text">Understand your audience's preferences, needs, and buying patterns.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Market Trend Forecasting</h5>
+                            <p class="card-text">Anticipate future trends and stay ahead of the competition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Why Choose Us?</h2>
+            <p class="fs-5 mb-4 text-center">Our marketing analytics services are designed to deliver actionable insights and drive growth for your business.</p>
+
+            <div class="row g-4">
+                <!-- Benefit Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">💡 Data-Driven Decisions</h5>
+                            <p class="card-text">Make informed decisions backed by accurate and reliable data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Improved ROI</h5>
+                            <p class="card-text">Optimize your marketing spend for maximum return on investment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 Enhanced Campaign Performance</h5>
+                            <p class="card-text">Achieve better results with targeted and data-backed campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Global Market Insights</h5>
+                            <p class="card-text">Access insights from local and global markets to expand your reach.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="text-center py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h2 class="fw-bold mb-4">Ready to Transform Your Marketing Strategy?</h2>
+        <p class="fs-5 mb-4">Contact us today to learn how our marketing analytics services can help your business grow.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg">Get Started Now</a>
+    </div>
+</div>
+{% endblock body %}

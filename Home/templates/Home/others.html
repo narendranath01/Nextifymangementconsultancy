@@ -1,0 +1,161 @@
+{% extends "index.html" %}
+
+{% block title %}Our Additional Services{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5 py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h1 class="display-4 fw-bold mb-4">Explore Our Additional Services</h1>
+        <p class="lead fs-4">Beyond analytics, we offer a range of tailored solutions to help your business thrive and achieve its goals.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg mt-3">Contact Us Today</a>
+    </div>
+
+    <!-- Services Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Comprehensive Solutions Tailored to Your Needs</h2>
+            <p class="fs-5 mb-4 text-center">We provide a variety of services designed to address your unique challenges and drive sustainable growth.</p>
+
+            <div class="row g-4">
+                <!-- Strategic Planning Block -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://source.unsplash.com/400x300/?strategy,planning,business" class="card-img-top" alt="Strategic Planning">
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold">Strategic Planning</h3>
+                            <p class="card-text">Define clear goals, align resources, and create actionable strategies for long-term success.</p>
+                            <a href="{% url 'strategicplanning' %}" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Management Block -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://source.unsplash.com/400x300/?change,management,business" class="card-img-top" alt="Change Management">
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold">Change Management</h3>
+                            <p class="card-text">Manage organizational change effectively, ensuring smooth transitions and sustained success.</p>
+                            <a href="{% url 'changemanagement' %}" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Management Block -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://source.unsplash.com/400x300/?risk,management,business" class="card-img-top" alt="Risk Management">
+                        <div class="card-body">
+                            <h3 class="card-title fw-bold">Risk Management</h3>
+                            <p class="card-text">Identify, assess, and manage risks to protect your business and drive growth.</p>
+                            <a href="{% url 'riskmanagement' %}" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Services Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Our Additional Services</h2>
+            <p class="fs-5 mb-4 text-center">In addition to our core offerings, we provide a range of solutions to help your business succeed.</p>
+
+            <div class="row g-4">
+                <!-- Consulting Services -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Consulting Services</h5>
+                            <p class="card-text">Leverage our expertise to solve complex business challenges and achieve your goals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Software Development -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Custom Software Development</h5>
+                            <p class="card-text">Build tailored software solutions to streamline operations and enhance productivity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Management Solutions -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Data Management Solutions</h5>
+                            <p class="card-text">Organize, store, and analyze your data effectively to drive better decision-making.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training & Support -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Training & Support</h5>
+                            <p class="card-text">Equip your team with the skills and knowledge needed to succeed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Why Choose Us?</h2>
+            <p class="fs-5 mb-4 text-center">Our additional services are designed to deliver measurable results and drive growth for your business.</p>
+
+            <div class="row g-4">
+                <!-- Benefit Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">💡 Tailored Solutions</h5>
+                            <p class="card-text">We customize our services to meet your unique business needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Expert Guidance</h5>
+                            <p class="card-text">Work with experienced professionals dedicated to your success.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 Enhanced Efficiency</h5>
+                            <p class="card-text">Streamline operations and improve productivity with our solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Ongoing Support</h5>
+                            <p class="card-text">We provide continuous support to ensure your long-term success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="text-center py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h2 class="fw-bold mb-4">Ready to Transform Your Business?</h2>
+        <p class="fs-5 mb-4">Contact us today to learn how our additional services can help your business grow.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg">Get Started Now</a>
+    </div>
+</div>
+{% endblock body %}

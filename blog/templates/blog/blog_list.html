@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }} | World of Nextify Blogs</title>
+    <style>
+        /* CSS Variables for Theme Management */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --danger-color: #e74c3c;
+            --background-color: #f4f4f4;
+            --text-color: #555;
+            --light-text-color: #777;
+            --white-color: #ffffff;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        body {
+            background-color: var(--background-color);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header img {
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+            color: white; /* Changed to white */
+        }
+
+        /* Blog Grid Styles */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .blog-card {
+            background-color: var(--white-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 20px;
+        }
+
+        .blog-card h2 {
+            font-size: 1.5rem;
+            margin: 0 0 10px;
+            color: var(--primary-color);
+        }
+
+        .blog-card p {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            margin: 0 0 15px;
+        }
+
+        .blog-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            border-radius: 5px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .blog-card a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Blog Content Styles */
+        .blog-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--white-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .blog-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-content img {
+            margin: 20px 0;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: var(--light-text-color);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Sidebar for Related Blogs or Ads */
+        .sidebar {
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .sidebar p {
+            font-size: 1rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--white-color);
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: var(--white-color);
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            transition: var(--transition);
+        }
+
+        .btn-edit {
+            background-color: var(--success-color);
+        }
+
+        .btn-edit:hover {
+            background-color: #219653;
+        }
+
+        .btn-back {
+            background-color: var(--danger-color);
+        }
+
+        .btn-back:hover {
+            background-color: #c0392b;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: var(--shadow);
+            display: none;
+            transition: var(--transition);
+        }
+
+        .back-to-top:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-container, .sidebar {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            .blog-title {
+                font-size: 1.8rem;
+            }
+
+            .blog-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <img src="/static/logo.jfif" alt="NMC Logo">
+        <!-- Home Page Link After Logo -->
+        <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> Home</a>
+            
+        </a>
+        <h1>NMC Blogs</h1>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+        {% for blog in blogs|slice:":10" %}
+        <div class="blog-card">
+            {% if blog.image1 %}
+                <img src="{{ blog.image1.url }}" alt="{{ blog.title }}">
+            {% endif %}
+            <div class="blog-card-content">
+                <h2>{{ blog.title }}</h2>
+                <p>{{ blog.content|truncatewords:30 }}</p>
+                <a href="{% url 'blog_detail' blog.id %}">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Blog Content -->
+    <div class="blog-container">
+        <h1 class="blog-title">{{ blog.title }}</h1>
+        <div class="blog-content">
+            {% if blog.image1 %}
+                <img src="{{ blog.image1.url }}" alt="Image 1" class="blog-image">
+            {% endif %}
+            {{ blog.content|linebreaks }}
+
+            {% if blog.image2 %}
+                <img src="{{ blog.image2.url }}" alt="Image 2" class="blog-image">
+            {% endif %}
+
+            {% if blog.image3 %}
+                <img src="{{ blog.image3.url }}" alt="Image 3" class="blog-image">
+            {% endif %}
+
+            {% if blog.image4 %}
+                <img src="{{ blog.image4.url }}" alt="Image 4" class="blog-image">
+            {% endif %}
+
+            {% if blog.image5 %}
+                <img src="{{ blog.image5.url }}" alt="Image 5" class="blog-image">
+            {% endif %}
+        </div>
+        <div class="blog-meta">
+            <p>Published on: {{ blog.published_date }}</p>
+            {% if blog.id %}
+                <a href="{% url 'edit_blog' blog.id %}" class="btn btn-edit">Edit Blog</a>
+            {% endif %}
+            <a href="{% url 'blog_list' %}" class="btn btn-back">Back to Blog List</a>
+        </div>
+    </div>
+
+    <!-- Sidebar for Related Blogs or Ads -->
+    <div class="sidebar">
+        <h3>Advertisement</h3>
+        <p>Your ad could be here!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Nextify Management Consultant. All rights reserved.</p>
+        <div>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

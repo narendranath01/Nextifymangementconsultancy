@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextify|Blogs</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            font-family: 'Cursive', sans-serif; /* Use a cursive font */
+        }
+        .header {
+            display: flex;
+            justify-content: center; /* Center the header title */
+            align-items: center;
+            padding: 0; /* Remove padding */
+            background-color: #4a9e4a; /* Change to a more appealing color */
+            color: white;
+            margin: 0; /* Ensure no margin */
+        }
+        .header img {
+            height: 50px; /* Adjust logo size */
+            margin-right: 10px; /* Add margin to the right of the logo */
+        }
+        .blog-post {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            text-decoration: none;
+            color: #5cb85c;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Nextify Blogs</h1>
+        <img src="/static/path/to/logo.png" alt="NMC Logo"> <!-- Adjust logo path -->
+    </div>
+    <h1>Nextify Blogs</h1>
+    {% for blog in blogs %}
+        <div class="blog-post">
+            <h2>{{ blog.title }}</h2>
+            <a href="{% url 'blog_detail' blog.id %}">View</a>
+            <a href="{% url 'edit_blog' blog.id %}">Edit</a>
+        </div>
+    {% endfor %}
+    <footer>
+        <p style="text-align: center;">&copy; 2023 NMC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

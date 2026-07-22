@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nextify - Your shortcut to everything</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Enhanced Color Scheme */
+      :root {
+        --primary-color: #0d3b66; /* Deep Blue */
+        --secondary-color: #ee6c4d; /* Coral */
+        --accent-color: #3da9fc; /* Bright Blue */
+        --light-accent: #7fc9ff;
+        --background-color: #f8fafc;
+        --text-color: #2d3748;
+        --light-text: #718096;
+        --card-bg: #ffffff;
+        --gradient-primary: linear-gradient(135deg, #0d3b66 0%, #3da9fc 100%);
+        --gradient-secondary: linear-gradient(135deg, #ee6c4d 0%, #ff9e7d 100%);
+        --gradient-bg: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+      }
+
+      /* General Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: var(--gradient-bg);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Enhanced Navbar */
+      .navbar {
+        background: var(--gradient-primary);
+        box-shadow: 0 4px 20px rgba(13, 59, 102, 0.15);
+        padding: 0.8rem 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand img {
+        height: 45px;
+        width: auto;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        padding: 0.6rem 1rem;
+        font-weight: 500;
+        border-radius: 8px;
+        margin: 0 2px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .navbar-nav .nav-link.active {
+        background: rgba(255, 255, 255, 0.2);
+        color: white !important;
+      }
+
+      .navbar-nav .nav-link i {
+        margin-right: 8px;
+        font-size: 1.1rem;
+      }
+
+      /* Enhanced Dropdown */
+      .dropdown-menu {
+        background: var(--card-bg);
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem;
+        margin-top: 8px;
+      }
+
+      .dropdown-item {
+        color: var(--text-color) !important;
+        padding: 0.7rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .dropdown-item:hover {
+        background: var(--accent-color);
+        color: white !important;
+        transform: translateX(5px);
+      }
+
+      .dropdown-item i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+      }
+
+      /* Enhanced Search and Buttons */
+      .form-control {
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .form-control:focus {
+        background: rgba(255, 255, 255, 0.25);
+        color: white;
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-outline-light {
+        height: 40px;
+        border-radius: 10px;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline-light:hover {
+        background: var(--secondary-color);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(238, 108, 77, 0.3);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        padding: 8rem 0 5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+      }
+
+      .hero-tagline {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+      }
+
+      .hero-description {
+        font-size: 1.1rem;
+        color: var(--light-text);
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+      }
+
+      .divider {
+        height: 1px;
+        background: linear-gradient(to right, transparent, #cbd5e0, transparent);
+        margin: 2rem auto;
+        width: 80%;
+      }
+
+      /* Download Section */
+      .download-section {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .btn-download {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.9rem 2rem;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-download i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      .btn-primary {
+        background: var(--gradient-primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(13, 59, 102, 0.3);
+      }
+
+      .btn-secondary {
+        background: var(--gradient-secondary);
+        color: white;
+      }
+
+      .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(238, 108, 77, 0.3);
+      }
+
+      .version-info {
+        text-align: center;
+        color: var(--light-text);
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.7rem 1.5rem;
+        border-radius: 20px;
+        display: inline-block;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        position: relative;
+      }
+
+      .section-title:after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-primary);
+        margin: 15px auto;
+        border-radius: 2px;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature {
+        background: var(--card-bg);
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .feature:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .feature h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+
+      .feature p {
+        color: var(--light-text);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      /* Enhanced Footer */
+      .footer {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 3rem 0 1.5rem;
+      }
+
+      .footer h5 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        position: relative;
+        display: inline-block;
+      }
+
+      .footer h5:after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: var(--secondary-color);
+        margin-top: 8px;
+        border-radius: 2px;
+      }
+
+      .footer a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .footer ul li {
+        margin-bottom: 0.7rem;
+      }
+
+      .footer ul li i {
+        margin-right: 10px;
+        color: var(--light-accent);
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin-right: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--secondary-color);
+        transform: translateY(-5px);
+      }
+
+      .blinking-text {
+        animation: blink 2s infinite;
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+
+      /* Background Pattern */
+      .analytical-pattern {
+        background: linear-gradient(270deg, #0d3b66, #3da9fc, #ee6c4d, #f4f7f6);
+        background-size: 800% 800%;
+        opacity: 0.03;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        animation: movePattern 20s ease infinite;
+      }
+
+      @keyframes movePattern {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .hero-tagline {
+          font-size: 1.2rem;
+        }
+        
+        .download-section {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .btn-download {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+        }
+        
+        .navbar-brand img {
+          height: 38px;
+        }
+        
+        .feature {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Moving Pattern Background -->
+    <div class="analytical-pattern"></div>
+
+       <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            
+            <img src="{% static 'logo.jfif' %}"  alt="NMC Logo" class="d-inline-block align-top" style=" height: 45px; margin-right: 15px; border-radius: 100%;" >
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog_list' %}"><i class="fas fa-blog"></i> Blog</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-cogs"></i> Services
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'businessanalytics' %}"><i class="fas fa-chart-line"></i> Business Analytics</a></li>
+                  <li><a class="dropdown-item" href="{% url 'financeanalytics' %}"><i class="fas fa-coins"></i> Finance Analytics</a></li>
+                  <li><a class="dropdown-item" href="{% url 'marketanalytics' %}"><i class="fas fa-chart-pie"></i> Market Analytics</a></li>
+                  <li><a class="dropdown-item" href="{% url 'marketresearch' %}"><i class="fas fa-search-dollar"></i> Market Research</a></li>
+                  <li><a class="dropdown-item" href="{% url 'seo' %}"><i class="fas fa-search"></i> SEO Solutions</a></li>
+                  <li><a class="dropdown-item" href="{% url 'managementconsulting' %}"><i class="fas fa-cogs"></i> Management Consulting</a></li>
+                  <li><a class="dropdown-item" href="{% url 'orgdevelopment' %}"><i class="fas fa-users-cog"></i> Organizational Development</a></li>
+                  <li><a class="dropdown-item" href="{% url 'others' %}"><i class="fas fa-tools"></i> Other Services</a></li>
+                </ul>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contactus' %}"><i class="fas fa-envelope"></i> Contact Us</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+              <a class="btn btn-outline-light ms-2" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> </a>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Conte>nt -->
+    <main class="container mt-5 pt-4">
+      {% block body %}{% endblock body %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5><i class="fas fa-link"></i> Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Login</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5><i class="fas fa-envelope"></i> Contact Info</h5>
+            <p><i class="fas fa-envelope"></i> Email: info@nextify.com<br><i class="fas fa-phone"></i> Phone: +91 8112771957</p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+              <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-light">
+        <p class="mb-0 text-center blinking-text">&copy; 2023 Nextify Management Consultant. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

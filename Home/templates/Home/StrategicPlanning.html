@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+
+{% block title %}Services / Strategic Planning{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5 py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h1 class="display-4 fw-bold mb-4">Drive Growth with Strategic Planning</h1>
+        <p class="lead fs-4">We help you define clear goals, align resources, and create actionable strategies for long-term success.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg mt-3">Get Started Today</a>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="mb-5">
+        <img src="https://source.unsplash.com/1200x600/?strategy,planning,business" alt="Strategic Planning" class="img-fluid rounded-3 shadow-lg" style="height: 50vh; width: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Services Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Our Strategic Planning Services</h2>
+            <p class="fs-5 mb-4 text-center">We provide tailored strategic planning solutions to help you achieve your business objectives and drive sustainable growth.</p>
+
+            <div class="row g-4">
+                <!-- Service Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Business Goal Setting</h5>
+                            <p class="card-text">Define clear, measurable, and achievable goals for your business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📈 Resource Allocation</h5>
+                            <p class="card-text">Align your resources to maximize efficiency and impact.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 Long-Term Strategy Development</h5>
+                            <p class="card-text">Create actionable strategies for sustainable growth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Market Expansion Planning</h5>
+                            <p class="card-text">Develop strategies to enter new markets and expand your reach.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Why Choose Us?</h2>
+            <p class="fs-5 mb-4 text-center">Our strategic planning services are designed to deliver measurable results and drive growth for your business.</p>
+
+            <div class="row g-4">
+                <!-- Benefit Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">💡 Clear Direction</h5>
+                            <p class="card-text">Define a clear path forward for your business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Data-Driven Strategies</h5>
+                            <p class="card-text">Make informed decisions backed by reliable data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 Sustainable Growth</h5>
+                            <p class="card-text">Achieve long-term success with proven strategies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Global Perspective</h5>
+                            <p class="card-text">Access insights from local and global markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="text-center py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h2 class="fw-bold mb-4">Ready to Transform Your Business?</h2>
+        <p class="fs-5 mb-4">Contact us today to learn how our strategic planning services can help your business grow.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg">Get Started Now</a>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+
+{% block title %}Services / Market Research{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="text-center mb-5 py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h1 class="display-4 fw-bold mb-4">Unlock Market Insights with Data-Driven Research</h1>
+        <p class="lead fs-4">Stay ahead of the competition with actionable insights into market trends, consumer behavior, and competitive dynamics.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg mt-3">Get Started Today</a>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="mb-5">
+        <img src="https://source.unsplash.com/1200x600/?market,research,data" alt="Market Research" class="img-fluid rounded-3 shadow-lg" style="height: 50vh; width: 100%; object-fit: cover;">
+    </div>
+
+    <!-- Services Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Our Market Research Services</h2>
+            <p class="fs-5 mb-4 text-center">We provide comprehensive market research solutions to help you make informed decisions and stay ahead in your industry.</p>
+
+            <div class="row g-4">
+                <!-- Service Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Market Trend Analysis</h5>
+                            <p class="card-text">Identify emerging trends and opportunities in your industry.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">👥 Consumer Behavior Insights</h5>
+                            <p class="card-text">Understand your target audience and their preferences.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📈 Competitive Analysis</h5>
+                            <p class="card-text">Gain insights into your competitors' strategies and performance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Industry Benchmarking</h5>
+                            <p class="card-text">Compare your performance against industry standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="row mb-5 g-4">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="fw-bold mb-4 text-center">Why Choose Us?</h2>
+            <p class="fs-5 mb-4 text-center">Our market research services are designed to deliver actionable insights and drive growth for your business.</p>
+
+            <div class="row g-4">
+                <!-- Benefit Cards -->
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">💡 Actionable Insights</h5>
+                            <p class="card-text">Turn data into strategies that drive results.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">📊 Data-Driven Decisions</h5>
+                            <p class="card-text">Make informed decisions backed by reliable data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🚀 Competitive Advantage</h5>
+                            <p class="card-text">Stay ahead of the competition with timely insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">🌍 Global Perspective</h5>
+                            <p class="card-text">Access insights from local and global markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="text-center py-5 bg-gradient-primary text-white rounded-3 shadow">
+        <h2 class="fw-bold mb-4">Ready to Transform Your Market Strategy?</h2>
+        <p class="fs-5 mb-4">Contact us today to learn how our market research services can help your business grow.</p>
+        <a href="{% url 'contactus' %}" class="btn btn-light btn-lg">Get Started Now</a>
+    </div>
+</div>
+{% endblock body %}
