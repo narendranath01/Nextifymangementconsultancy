@@ -1,4 +1,5 @@
 # Django settings for Nextify project.
+# This is a test comment for Git
 
 import os
 from pathlib import Path
