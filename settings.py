@@ -16,15 +16,31 @@ STATICFILES_DIRS = [
 DEBUG = True  # Enable debug mode for development
 # Other existing settings...
 
+import os
+from pathlib import Path
+
+# Make sure BASE_DIR is defined at the top of your settings.py
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # Change 'templates' here to match whatever your folder is named exactly
-        'DIRS': [BASE_DIR / 'templates'], 
+        'DIRS': [
+            BASE_DIR / 'templates',
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
-        ...
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
     },
 ]
+
 
 DATABASES = {
     'default': {
