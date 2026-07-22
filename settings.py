@@ -32,3 +32,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',  # Ensure this path is correct
     }
 }
+
+# 1. Ensure WhiteNoise is right under SecurityMiddleware
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # <-- Make sure this is here!
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    ...
+]
+
+# 2. Add this at the bottom of settings.py for caching static assets
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
